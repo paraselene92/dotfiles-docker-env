@@ -32,9 +32,17 @@ make_symbolicfile(){
         echo "================================="
         echo "make symbolicfile"
         echo "================================="
-        cd $HOME/.cache/dein && ln -s $HOME/dotfiles/userconfig/ userconfig
-        mkdir -p $HOME/.config/fish && cd $HOME/.config/fish && ln -s $HOME/dotfiles/fish/config.fish config.fish && ln -s $HOME/dotfiles/fish/functions/ functions
-        cd $HOME && ln -s $HOME/dotfiles/.vim .vim && ln -s $HOME/dotfiles/.vimrc .vimrc && ln -s $HOME/dotfiles/.tmux.conf .tmux.conf
+        cd $HOME/.cache/dein &&\
+                ln -s $HOME/dotfiles/userconfig/ userconfig
+        mkdir -p $HOME/.config/fish &&\
+                cd $HOME/.config/fish &&\
+                ln -s $HOME/dotfiles/fish/config.fish config.fish &&\
+                ln -s $HOME/dotfiles/fish/functions/ functions
+        cd $HOME &&\
+                ln -s $HOME/dotfiles/.aws .aws &&\
+                ln -s $HOME/dotfiles/.vim .vim &&\
+                ln -s $HOME/dotfiles/.vimrc .vimrc &&\
+                ln -s $HOME/dotfiles/.tmux.conf .tmux.conf
         sleep 5
 }
 
