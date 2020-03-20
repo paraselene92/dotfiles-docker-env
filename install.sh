@@ -10,14 +10,6 @@ start(){
         cd $HOME
 }
 
-git_clone(){
-        echo "================================="
-        echo "git clone"
-        echo "================================="
-        git clone https://github.com/paraselene92/dotfiles-docker-env.git
-        sleep 5
-}
-
 dein_install(){
         echo "================================="
         echo "dein install"
@@ -47,7 +39,6 @@ make_symbolicfile(){
 }
 
 start
-git_clone
 dein_install
 make_symbolicfile
 
