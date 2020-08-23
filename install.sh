@@ -20,6 +20,13 @@ dein_install(){
         sleep 5
 }
 
+starship_install(){
+        echo "================================="
+        echo "starship install"
+        echo "================================="
+        curl -fsSL https://starship.rs/install.sh | bash
+}
+
 make_symbolicfile(){
         echo "================================="
         echo "make symbolicfile"
@@ -40,5 +47,6 @@ make_symbolicfile(){
 
 start
 dein_install
+starship_install
 make_symbolicfile
 
