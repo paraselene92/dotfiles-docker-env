@@ -2,3 +2,5 @@
 !*.secret
 .aws/config
 .aws/credentials
+.aws/encfile
+.aws/encfile.secret
