@@ -20,6 +20,16 @@ dein_install(){
         sleep 5
 }
 
+ghq_install(){
+        echo "================================="
+        echo "starship install"
+        echo "================================="
+        cd /tmp
+        curl -OL "https://github.com/x-motemen/ghq/releases/download/v1.1.5/ghq_linux_amd64.zip"
+        unzip ghq_linux_amd64.zip
+        sudo cp /tmp/ghq_linux_amd64/ghq /usr/local/bin/.
+}
+
 starship_install(){
         echo "================================="
         echo "starship install"
@@ -47,6 +57,7 @@ make_symbolicfile(){
 
 start
 dein_install
+ghq_install
 starship_install
 make_symbolicfile
 
