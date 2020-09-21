@@ -22,7 +22,7 @@ dein_install(){
 
 ghq_install(){
         echo "================================="
-        echo "starship install"
+        echo "ghq install"
         echo "================================="
         cd /tmp
         curl -OL "https://github.com/x-motemen/ghq/releases/download/v1.1.5/ghq_linux_amd64.zip"
@@ -35,6 +35,16 @@ starship_install(){
         echo "starship install"
         echo "================================="
         curl -fsSL https://starship.rs/install.sh | bash
+}
+
+terraform_lsp_install(){
+        echo "================================="
+        echo "terraform-lsp install"
+        echo "================================="
+        cd /tmp
+        curl -OL "https://github.com/juliosueiras/terraform-lsp/releases/download/v0.0.11-beta2/terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz"
+        tar zxvf terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
+        sudo mv /tmp/terraform-lsp /usr/local/bin/.
 }
 
 make_symbolicfile(){
@@ -59,5 +69,6 @@ start
 dein_install
 ghq_install
 starship_install
+terraform_lsp_install
 make_symbolicfile
 

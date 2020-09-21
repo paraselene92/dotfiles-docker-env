@@ -22,6 +22,7 @@ if dein#load_state('~/.cache/dein')
   call dein#load_toml(s:toml, {'lazy':0})
   call dein#load_toml(s:lazy_toml, {'lazy':1})
   " You can specify revision/branch/tag.
+  call dein#add('neoclide/coc.nvim', {'merged':0, 'rev': 'release'})
   call dein#add('Shougo/deol.nvim', { 'rev': '01203d4c9' })
   " Required
   call dein#end()
@@ -49,6 +50,7 @@ augroup PrevimSettings
   autocmd!
   autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
   au BufRead,BufNewFile,BufReadPre *.ts set filetype=typescript
+  au BufRead,BufNewFile,BufReadPre *.tf set filetype=terraform
 augroup END
 
 "=============================================
