@@ -28,6 +28,7 @@ ghq_install(){
         curl -OL "https://github.com/x-motemen/ghq/releases/download/v1.1.5/ghq_linux_amd64.zip"
         unzip ghq_linux_amd64.zip
         sudo cp /tmp/ghq_linux_amd64/ghq /usr/local/bin/.
+        sleep 5
 }
 
 starship_install(){
@@ -35,7 +36,19 @@ starship_install(){
         echo "starship install"
         echo "================================="
         curl -fsSL https://starship.rs/install.sh | bash
+        sleep 5
 }
+
+tfenv_install(){
+        echo "================================="
+        echo "tfenv install"
+        echo "================================="
+        cd /tmp
+        git clone https://github.com/tfutils/tfenv.git ~/dotfiles/.tfenv
+        sudo mv ~/dotfiles/.tfenv/* /usr/local/bin/.
+        sleep 5
+}
+
 
 terraform_lsp_install(){
         echo "================================="
@@ -45,6 +58,7 @@ terraform_lsp_install(){
         curl -OL "https://github.com/juliosueiras/terraform-lsp/releases/download/v0.0.11-beta2/terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz"
         tar zxvf terraform-lsp_0.0.11-beta2_linux_amd64.tar.gz
         sudo mv /tmp/terraform-lsp /usr/local/bin/.
+        sleep 5
 }
 
 make_symbolicfile(){
@@ -61,6 +75,7 @@ make_symbolicfile(){
                 ln -s $HOME/dotfiles/.aws .aws &&\
                 ln -s $HOME/dotfiles/.vim .vim &&\
                 ln -s $HOME/dotfiles/.vimrc .vimrc &&\
+                ln -s $HOME/dotfiles/.tfenv .tfenv &&\
                 ln -s $HOME/dotfiles/.tmux.conf .tmux.conf
         sleep 5
 }
@@ -69,6 +84,7 @@ start
 dein_install
 ghq_install
 starship_install
+tfenv_install
 terraform_lsp_install
 make_symbolicfile
 
