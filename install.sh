@@ -46,6 +46,7 @@ tfenv_install(){
         cd /tmp
         git clone https://github.com/tfutils/tfenv.git ~/dotfiles/.tfenv
         sudo ln -s ~/dotfiles/.tfenv/bin/tfenv /usr/local/bin/.
+        sudo ln -s ~/dotfiles/.tfenv/bin/terraform /usr/local/bin/.
         sleep 5
 }
 
