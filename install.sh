@@ -45,7 +45,7 @@ tfenv_install(){
         echo "================================="
         cd /tmp
         git clone https://github.com/tfutils/tfenv.git ~/dotfiles/.tfenv
-        sudo mv ~/dotfiles/.tfenv/* /usr/local/bin/.
+        sudo ln -s ~/dotfiles/.tfenv/bin/tfenv /usr/local/bin/.
         sleep 5
 }
 
